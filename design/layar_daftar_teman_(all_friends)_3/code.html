@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Plus+Jakarta+Sans%3Awght%40400%3B500%3B700%3B800" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<title>Stitch Design</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#7f13ec",
+              "background-light": "#f7f6f8",
+              "background-dark": "#191022",
+            },
+            fontFamily: {
+              display: ["Plus Jakarta Sans"],
+            },
+            borderRadius: { DEFAULT: "0.5rem", lg: "1rem", xl: "1.5rem", full: "9999px" },
+          },
+        },
+      };
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="flex h-full min-h-screen w-full flex-col">
+<header class="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
+<div class="flex items-center justify-between p-4">
+<h1 class="flex-1 text-center text-xl font-bold text-black dark:text-white">Teman</h1>
+<button class="flex size-10 items-center justify-center rounded-full text-black dark:text-white">
+<span class="material-symbols-outlined text-2xl"> add </span>
+</button>
+</div>
+</header>
+<main class="flex-1 overflow-y-auto">
+<div class="px-4 py-2">
+<div class="relative">
+<span class="material-symbols-outlined pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-black/50 dark:text-white/50"> search </span>
+<input class="form-input w-full rounded-full border-transparent bg-primary/10 py-3 pl-10 pr-4 text-black dark:text-white placeholder-black/50 dark:placeholder-white/50 focus:border-primary focus:ring-primary" placeholder="Cari teman"/>
+</div>
+</div>
+<div class="flex gap-2 p-4 pt-2">
+<button class="flex items-center gap-x-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-black dark:text-white">
+<span>Semua</span>
+<span class="material-symbols-outlined text-lg"> expand_more </span>
+</button>
+<button class="flex items-center gap-x-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-black dark:text-white">
+<span>Baru</span>
+<span class="material-symbols-outlined text-lg"> expand_more </span>
+</button>
+<button class="flex items-center gap-x-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-black dark:text-white">
+<span>Online</span>
+<span class="material-symbols-outlined text-lg"> expand_more </span>
+</button>
+</div>
+<div class="space-y-1 px-2">
+<div class="flex cursor-pointer items-center gap-4 rounded-lg p-2 hover:bg-primary/5">
+<div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-primary/20 text-primary">
+<span class="material-symbols-outlined"> groups </span>
+</div>
+<div class="flex-1">
+<p class="font-semibold text-black dark:text-white">Permintaan Pertemanan</p>
+<p class="text-sm text-black/60 dark:text-white/60">2 permintaan baru</p>
+</div>
+<span class="text-xs font-bold text-primary">BARU</span>
+</div>
+<div class="flex cursor-pointer items-center gap-4 rounded-lg p-2 hover:bg-primary/5">
+<img alt="Anya" class="size-12 shrink-0 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJK1blLVYm9dKevU2AQpqeY51mM3XMrnJ4MFk7kIACn1mYFn2A11-SqmhMa3dmYWpr1hFUmOaIgYr-x4zNJS0MN3VEHmNae7KJPhZN5AKNb0zdKCacZdBvg7jWtFQvM4qTQZYLnxSatQzo8z_YgmU596sZ4lOuVfZ3u4aO-3BsMhqCJ9pVsuTb9cpxw5ewJFUv25EPZEBviavEXvweTsywbAoNmcY_bP6VjB5RTLnQ4Onkqb8scO3BpMqf9f2EsDF6AIGyU5OrlnM"/>
+<div class="flex-1">
+<p class="font-semibold text-black dark:text-white">Anya</p>
+<p class="text-sm text-black/60 dark:text-white/60">Terakhir online 5 menit lalu</p>
+</div>
+</div>
+<div class="flex cursor-pointer items-center gap-4 rounded-lg p-2 hover:bg-primary/5">
+<img alt="Beby" class="size-12 shrink-0 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwqy6DvVjkgiErR1pW1f5XOv79tNGFuODDQAiAzSSa5sIwAF7I7NHIYmM-_-NIpnEUyUNu5ZDycjfP2E7OFIEiVc0smoMXDXo2Yr4q6swNlKSASX8BOkV4BcC5L2iBok3CZXeyoABZC-U0D0gQADQBwOAzjAXV23VPafeFlHHWfv_TGzoh1ZrpY0FutIB4ZlRSTSenOekQJrkXYey3JivpOcZ6Zud2v8jMh5NTP_HQb7Ve9YR_0TjeSwOshwDHYxtBemaI-bkK36w"/>
+<div class="flex-1">
+<p class="font-semibold text-black dark:text-white">Beby</p>
+<p class="text-sm text-black/60 dark:text-white/60">Terakhir online 1 jam lalu</p>
+</div>
+</div>
+<div class="flex cursor-pointer items-center gap-4 rounded-lg p-2 hover:bg-primary/5">
+<img alt="Celine" class="size-12 shrink-0 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3B65WdqukGJLn-ZJnTIvQ1UUa_uXY7jRXVQd3VvLzsaPIyUM1xOG1jzkFV7zkP0EjU9lI6OW4X_WHIRSjxpybGz1d5RA8dQ8WxSgRclHhSR4QgMRSwk9jmixAypwpGOa1Lh1Nx82Q_T8RmKi605Wgndhty1zwwUcstmrdsyCeVrLny1yY4bsbPTRL_4835zo4LFRSXMzNZ1TZ-VwMpSgTTSsryRAOn3r9TlpYfIsXxsnPnTsXZp9WUm9qU52maOy_WevjgNVGVLk"/>
+<div class="flex-1">
+<p class="font-semibold text-black dark:text-white">Celine</p>
+<p class="text-sm text-black/60 dark:text-white/60">Mengetik...</p>
+</div>
+<div class="size-3 shrink-0 rounded-full bg-green-500"></div>
+</div>
+<div class="flex cursor-pointer items-center gap-4 rounded-lg p-2 hover:bg-primary/5">
+<img alt="Dinda" class="size-12 shrink-0 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYe4ND86fbQ3Q9IeMEqAHtakWDbNPjoydRgagiSC7lztVmFgpxGL5gsJxbOyuDJgQFaaoZLdgzMrjzXpi4-BCs9hlGosVuhfc-OrxngH7WrykytzdsJnxz4J9NNKuXkUH5-p_vsudpHa6MnG7q929T_OHc5nCq_mC4QxwBiVW4utaUnRij28TBpp7KHrlBL4rw9iRWMDf3JcIfR8x6ty-_clOGyob12dZ3yF7DzJmgo00Igfb3WGaKJPPdtt8lpMDOibvTDrjkIHs"/>
+<div class="flex-1">
+<p class="font-semibold text-black dark:text-white">Dinda</p>
+<p class="text-sm text-black/60 dark:text-white/60">Oke, sampai jumpa!</p>
+</div>
+<span class="text-xs text-black/60 dark:text-white/60">14:20</span>
+</div>
+<div class="flex cursor-pointer items-center gap-4 rounded-lg p-2 hover:bg-primary/5">
+<img alt="Elina" class="size-12 shrink-0 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAq-sVV1zjmilbviGI47sedV0tmhzN2gMOVSIZrnvb6O5QSeFCuP9oaHbRV56yixE5m1iDIVUPFWhd87SSTdvl_rh2HvFup5zk-NQFxdmRoQ8duTUFGFtg1PQnY14D13lSajGogCl9rRPKy5zqx5lSASg5iaoTa1DWwK-Ld4IwvB8sMxcsoc8vBszVKoc2ZXAOJb3-oGmhemLPSIxPcErgRt_Pf5AIwbtpLw09dWCGBsXR8GWCLg7XfOL-IRGNyyKxXY8UWOG9LWbI"/>
+<div class="flex-1">
+<p class="font-semibold text-black dark:text-white">Elina</p>
+<p class="text-sm text-black/60 dark:text-white/60">Terakhir online kemarin</p>
+</div>
+</div>
+</div>
+</main>
+<footer class="sticky bottom-0 bg-background-light/80 dark:bg-background-dark/80 pb-safe backdrop-blur-sm">
+<div class="flex justify-around border-t border-primary/10 py-2">
+<a class="flex flex-col items-center gap-1 p-2 text-primary" href="#">
+<span class="material-symbols-outlined"> home </span>
+<p class="text-xs font-bold">Beranda</p>
+</a>
+<a class="flex flex-col items-center gap-1 p-2 text-black/60 dark:text-white/60" href="#">
+<span class="material-symbols-outlined"> chat_bubble </span>
+<p class="text-xs font-medium">Pesan</p>
+</a>
+<a class="flex flex-col items-center gap-1 p-2 text-black/60 dark:text-white/60" href="#">
+<span class="material-symbols-outlined"> person </span>
+<p class="text-xs font-medium">Profil</p>
+</a>
+</div>
+</footer>
+</div>
+
+</body></html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Chat App - Pengaturan</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#7f13ec",
+                        "primary-focus": "#6e11cf",
+                        "primary-content": "#ffffff",
+                        secondary: "#ff823a",
+                        "secondary-focus": "#e67534",
+                        "secondary-content": "#ffffff",
+                        "background-light": "#f7f6f8",
+                        "background-dark": "#191022",
+                        "foreground-light": "#1f2937",
+                        "foreground-dark": "#f9fafb",
+                        "card-light": "#ffffff",
+                        "card-dark": "#231531",
+                        "border-light": "#e5e7eb",
+                        "border-dark": "#3a2c4a",
+                    },
+                    fontFamily: {
+                        display: ["Plus Jakarta Sans", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.75rem",
+                        lg: "1rem",
+                        xl: "1.5rem",
+                        full: "9999px",
+                    },
+                },
+            },
+        };
+    </script>
+<style>
+        .range-slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 4px;
+            border-radius: 5px;
+            background: #e5e7eb;
+            outline: none;
+            opacity: 0.7;
+            -webkit-transition: 0.2s;
+            transition: opacity 0.2s;
+        }
+        .dark .range-slider {
+            background: #3a2c4a;
+        }
+        .range-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #7f13ec;
+            cursor: pointer;
+            border: 4px solid #fff;
+        }
+        .dark .range-slider::-webkit-slider-thumb {
+            border-color: #231531;
+        }
+        .range-slider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #7f13ec;
+            cursor: pointer;
+            border: 4px solid #fff;
+        }
+        .dark .range-slider::-moz-range-thumb {
+            border-color: #231531;
+        }
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 44px;
+            height: 24px;
+        }
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: 0.4s;
+            transition: 0.4s;
+            border-radius: 34px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: 0.4s;
+            transition: 0.4s;
+            border-radius: 50%;
+        }
+        input:checked + .slider {
+            background-color: #ff823a;
+        }
+        input:focus + .slider {
+            box-shadow: 0 0 1px #ff823a;
+        }
+        input:checked + .slider:before {
+            -webkit-transform: translateX(20px);
+            -ms-transform: translateX(20px);
+            transform: translateX(20px);
+        }
+    </style>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-light dark:bg-background-dark text-foreground-light dark:text-foreground-dark">
+<div class="relative flex min-h-screen w-full flex-col">
+<header class="sticky top-0 z-10 flex items-center justify-between bg-background-light/80 px-4 py-3 backdrop-blur-sm dark:bg-background-dark/80">
+<a class="flex h-10 w-10 items-center justify-center rounded-full text-slate-600 hover:bg-slate-200 dark:text-slate-300 dark:hover:bg-slate-800" href="#">
+<svg class="h-6 w-6" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="m15 18-6-6 6-6"></path>
+</svg>
+</a>
+<h1 class="flex-1 text-center text-lg font-bold">
+                Pengaturan
+            </h1>
+<div class="w-10"></div>
+</header>
+<main class="flex-1 space-y-6 p-4">
+<section>
+<h2 class="text-base font-semibold text-primary mb-3">Preferensi Penemuan</h2>
+<div class="space-y-4 rounded-lg bg-card-light dark:bg-card-dark p-4">
+<div>
+<label class="block text-sm font-medium text-slate-700 dark:text-slate-300" for="gender">Tampilkan Saya</label>
+<div class="mt-2 flex gap-2">
+<button class="flex-1 rounded-full bg-primary py-2 text-sm font-semibold text-white">Wanita</button>
+<button class="flex-1 rounded-full bg-border-light dark:bg-border-dark py-2 text-sm font-semibold text-slate-700 dark:text-slate-200">Pria</button>
+<button class="flex-1 rounded-full bg-border-light dark:bg-border-dark py-2 text-sm font-semibold text-slate-700 dark:text-slate-200">Semua</button>
+</div>
+</div>
+<div>
+<div class="flex justify-between">
+<label class="block text-sm font-medium text-slate-700 dark:text-slate-300" for="age-range">Rentang Usia</label>
+<span class="text-sm font-medium text-primary">18-35</span>
+</div>
+<input class="range-slider mt-2" id="age-range" max="70" min="18" type="range" value="35"/>
+</div>
+<div>
+<div class="flex justify-between">
+<label class="block text-sm font-medium text-slate-700 dark:text-slate-300" for="distance-range">Jarak Maksimum</label>
+<span class="text-sm font-medium text-primary">15 km</span>
+</div>
+<input class="range-slider mt-2" id="distance-range" max="100" min="1" type="range" value="15"/>
+</div>
+</div>
+</section>
+<section>
+<h2 class="text-base font-semibold text-primary mb-3">Pengaturan Akun</h2>
+<div class="divide-y divide-border-light dark:divide-border-dark rounded-lg bg-card-light dark:bg-card-dark">
+<a class="flex items-center justify-between p-4 hover:bg-slate-50 dark:hover:bg-slate-800/20" href="#">
+<span class="text-sm font-medium">Nomor Telepon</span>
+<div class="flex items-center gap-2">
+<span class="text-sm text-slate-500 dark:text-slate-400">+62 812 3456 7890</span>
+<svg class="h-4 w-4 text-slate-400" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="m9 18 6-6-6-6"></path>
+</svg>
+</div>
+</a>
+<a class="flex items-center justify-between p-4 hover:bg-slate-50 dark:hover:bg-slate-800/20" href="#">
+<span class="text-sm font-medium">Verifikasi Akun</span>
+<div class="flex items-center gap-2">
+<svg class="h-5 w-5 text-green-500" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+<polyline points="22 4 12 14.01 9 11.01"></polyline>
+</svg>
+<svg class="h-4 w-4 text-slate-400" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="m9 18 6-6-6-6"></path>
+</svg>
+</div>
+</a>
+</div>
+</section>
+<section>
+<div class="flex items-center justify-between mb-3">
+<h2 class="text-base font-semibold text-primary">Template Percakapan</h2>
+<button class="flex items-center gap-2 rounded-full bg-secondary px-4 py-2 text-sm font-semibold text-secondary-content">
+<svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 12h14"></path>
+<path d="M12 5v14"></path>
+</svg>
+<span>Tambah Baru</span>
+</button>
+</div>
+<div class="divide-y divide-border-light dark:divide-border-dark rounded-lg bg-card-light dark:bg-card-dark">
+<div class="flex items-center justify-between p-4">
+<p class="text-sm truncate pr-4">Hai! Profil kamu menarik banget, suka traveling juga ya?</p>
+<div class="flex items-center gap-2">
+<button class="h-8 w-8 flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800/50 text-slate-500 dark:text-slate-400">
+<svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"></path>
+</svg>
+</button>
+<button class="h-8 w-8 flex items-center justify-center rounded-full hover:bg-red-50 dark:hover:bg-red-900/20 text-red-500">
+<svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M3 6h18"></path>
+<path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path>
+<path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+</svg>
+</button>
+</div>
+</div>
+<div class="flex items-center justify-between p-4">
+<p class="text-sm truncate pr-4">Lagi cari temen ngobrol nih, ada waktu?</p>
+<div class="flex items-center gap-2">
+<button class="h-8 w-8 flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800/50 text-slate-500 dark:text-slate-400">
+<svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"></path>
+</svg>
+</button>
+<button class="h-8 w-8 flex items-center justify-center rounded-full hover:bg-red-50 dark:hover:bg-red-900/20 text-red-500">
+<svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M3 6h18"></path>
+<path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path>
+<path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+</svg>
+</button>
+</div>
+</div>
+</div>
+</section>
+<section>
+<h2 class="text-base font-semibold text-primary mb-3">Notifikasi</h2>
+<div class="divide-y divide-border-light dark:divide-border-dark rounded-lg bg-card-light dark:bg-card-dark">
+<div class="flex items-center justify-between p-4">
+<span class="text-sm font-medium">Pesan Baru</span>
+<label class="switch">
+<input checked="" type="checkbox"/>
+<span class="slider"></span>
+</label>
+</div>
+<div class="flex items-center justify-between p-4">
+<span class="text-sm font-medium">Match Baru</span>
+<label class="switch">
+<input checked="" type="checkbox"/>
+<span class="slider"></span>
+</label>
+</div>
+<div class="flex items-center justify-between p-4">
+<span class="text-sm font-medium">Suka Baru</span>
+<label class="switch">
+<input type="checkbox"/>
+<span class="slider"></span>
+</label>
+</div>
+</div>
+</section>
+<section>
+<div class="rounded-lg bg-card-light dark:bg-card-dark">
+<a class="flex items-center justify-between p-4 text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-t-lg" href="#">
+<span class="text-sm font-medium">Logout</span>
+</a>
+<a class="flex items-center justify-between p-4 text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/20 rounded-b-lg" href="#">
+<span class="text-sm font-medium">Hapus Akun</span>
+</a>
+</div>
+</section>
+</main>
+<footer class="sticky bottom-0 border-t border-slate-200 bg-background-light/80 pb-3 pt-2 backdrop-blur-sm dark:border-slate-800 dark:bg-background-dark/80">
+<div class="flex justify-around">
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-primary" href="#">
+<svg class="h-7 w-7" fill="currentColor" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+<path d="M128,24a104,104,0,0,0-91.82,152.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Zm45.16,128.62a12.23,12.23,0,0,1-1.63,1.63l-40,40a12,12,0,0,1-17,0l-40-40a12,12,0,0,1,17-17L128,143l30.37-30.38a12,12,0,0,1,17,17Z"></path>
+</svg>
+<p class="text-xs font-medium">Swipe</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-primary" href="#">
+<svg class="h-7 w-7" fill="currentColor" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+<path d="M216,40H40A16,16,0,0,0,24,56V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm-12.89,16,7.55,6.66-82.66,72.33a16,16,0,0,1-18,0L29.34,62.66,36.89,56ZM40,192V70.25l77.58,67.89a32,32,0,0,0,36.84,0L216,70.25V192Z"></path>
+</svg>
+<p class="text-xs font-medium">Pesan</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-primary" href="#">
+<svg class="h-7 w-7" fill="currentColor" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+<path d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.56,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8ZM72,96a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z"></path>
+</svg>
+<p class="text-xs font-medium">Profil</p>
+</a>
+</div>
+</footer>
+</div>
+
+</body></html>

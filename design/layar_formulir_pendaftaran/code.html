@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Stitch Design</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#7f13ec",
+              "background-light": "#f7f6f8",
+              "background-dark": "#191022",
+            },
+            fontFamily: {
+              display: ["Plus Jakarta Sans"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              lg: "1rem",
+              xl: "1.5rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+<style>
+      .form-select {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%239ca3af' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+        background-position: right 0.5rem center;
+        background-repeat: no-repeat;
+        background-size: 1.5em 1.5em;
+        padding-right: 2.5rem;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .dark .form-select {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%239ca3af' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<header class="flex items-center justify-between p-4">
+<button class="text-gray-800 dark:text-white">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path>
+</svg>
+</button>
+<h1 class="flex-1 text-center text-lg font-bold text-gray-900 dark:text-white pr-6">Daftar</h1>
+</header>
+<main class="flex-1 px-4 py-6">
+<form class="space-y-4">
+<input class="form-input w-full rounded-lg border-0 bg-gray-200 dark:bg-gray-800/50 h-14 p-4 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-primary" placeholder="Nama Pengguna" type="text"/>
+<input class="form-input w-full rounded-lg border-0 bg-gray-200 dark:bg-gray-800/50 h-14 p-4 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-primary" placeholder="Email atau Nomor Telepon" type="email"/>
+<input class="form-input w-full rounded-lg border-0 bg-gray-200 dark:bg-gray-800/50 h-14 p-4 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-primary" placeholder="Kata Sandi" type="password"/>
+<input class="form-input w-full rounded-lg border-0 bg-gray-200 dark:bg-gray-800/50 h-14 p-4 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-primary" placeholder="Konfirmasi Kata Sandi" type="password"/>
+<input class="form-input w-full rounded-lg border-0 bg-gray-200 dark:bg-gray-800/50 h-14 p-4 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-primary" placeholder="Tanggal Lahir" type="date"/>
+<div class="relative">
+<select class="form-select appearance-none w-full rounded-lg border-0 bg-gray-200 dark:bg-gray-800/50 h-14 p-4 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-primary">
+<option disabled="" selected="">Jenis Kelamin</option>
+<option value="male">Laki-laki</option>
+<option value="female">Perempuan</option>
+</select>
+</div>
+<div class="pt-6">
+<button class="flex w-full cursor-pointer items-center justify-center rounded-lg h-12 bg-primary text-white text-base font-bold tracking-wide shadow-lg shadow-primary/30" type="submit">
+              Daftar
+            </button>
+</div>
+<p class="text-center text-xs font-normal text-gray-500 dark:text-gray-400 pt-2">
+            Dengan mendaftar, Anda menyetujui
+            <a class="text-primary underline" href="#">Kebijakan Privasi</a> dan
+            <a class="text-primary underline" href="#">Syarat &amp; Ketentuan</a> kami.
+          </p>
+</form>
+</main>
+</div>
+
+</body></html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Onboarding Profile</title>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Plus+Jakarta+Sans:wght@400;500;700;800" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#7f13ec",
+            "background-light": "#f7f6f8",
+            "background-dark": "#191022",
+          },
+          fontFamily: {
+            "display": ["Plus Jakarta Sans"]
+          },
+          borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+<style>
+    .form-input::placeholder {
+        color: #a1a1aa;}
+    .dark .form-input::placeholder {
+        color: #71717a;}
+    .progress-bar {
+        background-image: linear-gradient(to right, #7f13ec, #e879f9);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-zinc-900 dark:text-zinc-100">
+<div class="relative flex h-auto min-h-screen w-full flex-col justify-between overflow-x-hidden">
+<div class="p-6 pb-24">
+<div class="relative mb-8">
+<div class="absolute inset-x-0 top-1/2 -translate-y-1/2">
+<div class="h-1 w-full rounded-full bg-zinc-200 dark:bg-zinc-700">
+<div class="h-1 w-0 rounded-full progress-bar transition-all duration-500" style="width: 16.66%;"></div>
+</div>
+</div>
+<div class="relative flex justify-between items-center">
+<div class="flex flex-col items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined">person</span>
+</div>
+<p class="text-xs font-bold text-primary">Profil</p>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-zinc-200 dark:bg-zinc-700 flex items-center justify-center text-zinc-400 dark:text-zinc-500">
+<span class="material-symbols-outlined">interests</span>
+</div>
+<p class="text-xs font-medium text-zinc-400 dark:text-zinc-500">Minat</p>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-zinc-200 dark:bg-zinc-700 flex items-center justify-center text-zinc-400 dark:text-zinc-500">
+<span class="material-symbols-outlined">photo_camera</span>
+</div>
+<p class="text-xs font-medium text-zinc-400 dark:text-zinc-500">Foto</p>
+</div>
+</div>
+</div>
+<div class="text-center mb-8">
+<h1 class="text-2xl font-bold tracking-tight">Buat Profil Singkat</h1>
+<p class="text-zinc-600 dark:text-zinc-400 mt-2">Mulailah dengan info dasar. Anda dapat mengubahnya nanti.</p>
+</div>
+<div class="space-y-6">
+<div>
+<label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2" for="nickname">Nama Panggilan</label>
+<input class="form-input w-full rounded-lg border border-zinc-300 dark:border-zinc-700 bg-background-light dark:bg-zinc-800 p-3 text-base focus:ring-2 focus:ring-primary focus:border-primary" id="nickname" placeholder="cth: Alex" value=""/>
+</div>
+<div>
+<label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2" for="city">Kota</label>
+<input class="form-input w-full rounded-lg border border-zinc-300 dark:border-zinc-700 bg-background-light dark:bg-zinc-800 p-3 text-base focus:ring-2 focus:ring-primary focus:border-primary" id="city" placeholder="cth: Jakarta" value=""/>
+</div>
+<div>
+<label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2" for="bio">Deskripsi Singkat / Bio</label>
+<textarea class="form-input w-full resize-none rounded-lg border border-zinc-300 dark:border-zinc-700 bg-background-light dark:bg-zinc-800 p-3 text-base focus:ring-2 focus:ring-primary focus:border-primary min-h-[120px]" id="bio" placeholder="Ceritakan sedikit tentang diri Anda..."></textarea>
+</div>
+</div>
+</div>
+<div class="p-4 fixed bottom-0 left-0 right-0 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-t border-zinc-200 dark:border-zinc-800">
+<button class="w-full h-12 px-5 rounded-xl bg-primary text-white font-bold text-base tracking-wide flex items-center justify-center disabled:bg-primary/50 disabled:cursor-not-allowed">
+<span>Selanjutnya</span>
+</button>
+</div>
+</div>
+
+</body></html>

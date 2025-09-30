@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Plus+Jakarta+Sans%3Awght%40400%3B500%3B700%3B800" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<title>Stitch Design</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#7f13ec",
+              accent: "#ff8c00",
+              "background-light": "#f7f6f8",
+              "background-dark": "#191022",
+            },
+            fontFamily: {
+              display: ["Plus Jakarta Sans"],
+            },
+            borderRadius: { DEFAULT: "0.5rem", lg: "1rem", xl: "1.5rem", full: "9999px" },
+          },
+        },
+      };
+    </script>
+<style type="text/tailwindcss">
+      input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 24px;
+        height: 24px;
+        border-radius: 9999px;
+        background-color: var(--accent-color);
+        cursor: pointer;
+        margin-top: -8px;
+      }
+      input[type="range"]::-moz-range-thumb {
+        width: 24px;
+        height: 24px;
+        border-radius: 9999px;
+        background-color: var(--accent-color);
+        cursor: pointer;
+        border: none;
+      }
+      .dark input[type="range"]::-webkit-slider-thumb {
+        background-color: #ff8c00;
+      }
+      .dark input[type="range"]::-moz-range-thumb {
+        background-color: #ff8c00;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="flex h-full min-h-screen w-full flex-col">
+<header class="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
+<div class="flex items-center justify-between p-4">
+<button class="flex size-10 items-center justify-center rounded-full text-black dark:text-white">
+<span class="material-symbols-outlined text-2xl"> arrow_back_ios_new </span>
+</button>
+<h1 class="flex-1 text-center text-xl font-bold text-black dark:text-white">Pengaturan</h1>
+<div class="w-10"></div>
+</div>
+</header>
+<main class="flex-1 overflow-y-auto px-4 py-6">
+<div class="space-y-8">
+<div class="space-y-4">
+<h2 class="text-lg font-semibold text-black dark:text-white">Preferensi Pencarian</h2>
+<div class="space-y-4 rounded-xl bg-primary/5 p-4">
+<div>
+<label class="font-medium text-black dark:text-white" for="gender">Tampilkan saya</label>
+<div class="mt-2 flex gap-2">
+<button class="flex-1 rounded-full bg-accent px-4 py-2 font-semibold text-white">Wanita</button>
+<button class="flex-1 rounded-full bg-primary/10 px-4 py-2 font-semibold text-black dark:text-white">Pria</button>
+<button class="flex-1 rounded-full bg-primary/10 px-4 py-2 font-semibold text-black dark:text-white">Semua</button>
+</div>
+</div>
+<div>
+<div class="flex justify-between">
+<label class="font-medium text-black dark:text-white" for="location">Jarak</label>
+<span class="font-medium text-black dark:text-white">50 km</span>
+</div>
+<div class="mt-2 relative">
+<input class="w-full h-2 bg-primary/20 rounded-full appearance-none cursor-pointer" id="location" max="100" min="1" style="--accent-color: #ff8c00;" type="range" value="50"/>
+</div>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<h2 class="text-lg font-semibold text-black dark:text-white">Pengaturan Akun</h2>
+<div class="space-y-2 rounded-xl bg-primary/5 p-4">
+<div class="flex items-center justify-between py-2">
+<p class="font-medium text-black dark:text-white">Mode Gelap</p>
+<label class="relative inline-flex cursor-pointer items-center">
+<input class="peer sr-only" type="checkbox"/>
+<div class="peer h-6 w-11 rounded-full bg-primary/20 after:absolute after:left-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-accent peer-checked:after:translate-x-full peer-checked:after:border-white dark:border-gray-600 dark:bg-primary/20 dark:peer-focus:ring-accent/50"></div>
+</label>
+</div>
+<div class="flex items-center justify-between py-2">
+<p class="font-medium text-black dark:text-white">Notifikasi</p>
+<button class="text-black/60 dark:text-white/60">
+<span class="material-symbols-outlined"> chevron_right </span>
+</button>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<h2 class="text-lg font-semibold text-black dark:text-white">Privasi</h2>
+<div class="space-y-2 rounded-xl bg-primary/5 p-4">
+<div class="flex items-center justify-between py-2">
+<p class="font-medium text-black dark:text-white">Tampilkan profil saya</p>
+<label class="relative inline-flex cursor-pointer items-center">
+<input checked="" class="peer sr-only" type="checkbox"/>
+<div class="peer h-6 w-11 rounded-full bg-primary/20 after:absolute after:left-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-accent peer-checked:after:translate-x-full peer-checked:after:border-white dark:border-gray-600 dark:bg-primary/20 dark:peer-focus:ring-accent/50"></div>
+</label>
+</div>
+<div class="flex items-center justify-between py-2">
+<p class="font-medium text-black dark:text-white">Tampilkan lokasi saya</p>
+<label class="relative inline-flex cursor-pointer items-center">
+<input class="peer sr-only" type="checkbox"/>
+<div class="peer h-6 w-11 rounded-full bg-primary/20 after:absolute after:left-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-accent peer-checked:after:translate-x-full peer-checked:after:border-white dark:border-gray-600 dark:bg-primary/20 dark:peer-focus:ring-accent/50"></div>
+</label>
+</div>
+</div>
+</div>
+<div class="pt-4">
+<button class="w-full rounded-full bg-red-500/10 py-3 font-semibold text-red-500">Keluar</button>
+</div>
+</div>
+</main>
+<footer class="sticky bottom-0 bg-background-light/80 dark:bg-background-dark/80 pb-safe backdrop-blur-sm">
+<div class="flex justify-around border-t border-primary/10 py-2">
+<a class="flex flex-col items-center gap-1 p-2 text-black/60 dark:text-white/60" href="#">
+<span class="material-symbols-outlined"> home </span>
+<p class="text-xs font-medium">Beranda</p>
+</a>
+<a class="flex flex-col items-center gap-1 p-2 text-black/60 dark:text-white/60" href="#">
+<span class="material-symbols-outlined"> chat_bubble </span>
+<p class="text-xs font-medium">Pesan</p>
+</a>
+<a class="flex flex-col items-center gap-1 p-2 text-black/60 dark:text-white/60" href="#">
+<span class="material-symbols-outlined"> groups </span>
+<p class="text-xs font-medium">Teman</p>
+</a>
+<a class="flex flex-col items-center gap-1 p-2 text-primary" href="#">
+<span class="material-symbols-outlined"> person </span>
+<p class="text-xs font-bold">Profil</p>
+</a>
+</div>
+</footer>
+</div>
+
+</body></html>

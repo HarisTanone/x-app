@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Stitch Design</title>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Plus+Jakarta+Sans:wght@400;500;700;800" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#7f13ec",
+              "background-light": "#f7f6f8",
+              "background-dark": "#191022"
+            },
+            fontFamily: {
+              "display": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {
+              "DEFAULT": "0.5rem",
+              "lg": "1rem",
+              "xl": "1.5rem",
+              "full": "9999px"
+            },
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+<div class="relative flex h-auto min-h-screen w-full flex-col justify-between overflow-x-hidden">
+<div class="flex-grow">
+<header class="flex items-center p-4">
+<h1 class="flex-1 text-center text-lg font-bold text-gray-900 dark:text-white">Temukan</h1>
+<button class="ml-auto text-gray-600 dark:text-gray-400">
+<span class="material-symbols-outlined">
+              settings
+            </span>
+</button>
+</header>
+<main class="p-4">
+<div class="relative w-full aspect-[3/4] rounded-xl overflow-hidden shadow-lg">
+<div class="absolute inset-0 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDBQIpohbk6scSe2iGvg5v8sBk42uBVsRFQbwHFuFcLsENZ6LIRwke2TEXwGtw2TdV2YjFbdj--6eVVS3zFsagxyQTVdKVu9Qedve8cjDw8es4bHIlydHdHVsc0iN2cCSNbK_Um1IgXTjDkFiwrbzVftSGFhDFdSayffK4zMB5hBP9CYk-CqSSXWuCjtWHW2mp1zyNY0_XfB2SjdpSjE4z9mJaxez6zTbyK2AE9iVJldArQRne1QFQetybC7rkJyZ-vZ1q9LfHsWSA");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+<h2 class="text-3xl font-bold">Anya, 24</h2>
+<p class="text-sm text-gray-300 flex items-center gap-1.5 mt-1">
+<span class="material-symbols-outlined text-sm">
+                  location_on
+                </span>
+                1.2km
+              </p>
+<p class="mt-3 text-base">Pecinta kopi, suka jalan-jalan, dan selalu mencari teman baru untuk berbagi cerita.</p>
+</div>
+</div>
+<div class="mt-6 flex justify-center gap-4">
+<button class="w-20 h-20 rounded-full bg-white dark:bg-background-dark/50 flex items-center justify-center text-red-500 shadow-md transform transition-transform hover:scale-105">
+<span class="material-symbols-outlined text-4xl">
+                close
+              </span>
+</button>
+<button class="w-24 h-24 rounded-full bg-primary flex items-center justify-center text-white shadow-lg transform transition-transform hover:scale-105 -translate-y-2">
+<span class="material-symbols-outlined text-5xl">
+                favorite
+              </span>
+</button>
+<button class="w-20 h-20 rounded-full bg-white dark:bg-background-dark/50 flex items-center justify-center text-yellow-500 shadow-md transform transition-transform hover:scale-105">
+<span class="material-symbols-outlined text-4xl">
+                star
+              </span>
+</button>
+</div>
+<div class="text-center mt-4">
+<p class="text-sm text-gray-500 dark:text-gray-400">12 Swipes Tersisa</p>
+</div>
+</main>
+</div>
+<nav class="sticky bottom-0 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-t border-gray-200 dark:border-gray-800">
+<div class="flex justify-around items-center h-20 px-4">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined">
+              explore
+            </span>
+<span class="text-xs font-medium">Temukan</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-gray-400 dark:text-gray-500 hover:text-primary dark:hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">
+              chat_bubble
+            </span>
+<span class="text-xs font-medium">Pesan</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-gray-400 dark:text-gray-500 hover:text-primary dark:hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">
+              person
+            </span>
+<span class="text-xs font-medium">Profil</span>
+</a>
+</div>
+</nav>
+</div>
+
+</body></html>

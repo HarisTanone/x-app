@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#7f13ec",
+              "background-light": "#f7f6f8",
+              "background-dark": "#191022",
+            },
+            fontFamily: {
+              "display": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<title>Stitch Design</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex h-screen min-h-screen w-full flex-col justify-between overflow-x-hidden">
+<div class="flex flex-col flex-1 overflow-y-auto">
+<header class="sticky top-0 z-10 flex items-center justify-between bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm p-4">
+<button class="flex items-center justify-center p-2 text-gray-600 dark:text-gray-300">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path>
+</svg>
+</button>
+<h2 class="text-lg font-bold text-gray-900 dark:text-white">Rina</h2>
+<button class="flex items-center justify-center p-2 text-gray-600 dark:text-gray-300">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.12,8.12,0,0,0-.75.56L134.87,160c-15.42-7.49-31.34-23.29-38.83-38.51l20.78-24.71c.2-.25.39-.5.57-.77a16,16,0,0,0,1.32-15.06l0-.12L97.54,33.64a16,16,0,0,0-16.62-9.52A56.26,56.26,0,0,0,32,80c0,79.4,64.6,144,144,144a56.26,56.26,0,0,0,55.88-48.92A16,16,0,0,0,222.37,158.46ZM176,208A128.14,128.14,0,0,1,48,80,40.2,40.2,0,0,1,82.87,40a.61.61,0,0,0,0,.12l21,47L83.2,111.86a6.13,6.13,0,0,0-.57.77,16,16,0,0,0-1,15.7c9.06,18.53,27.73,37.06,46.46,46.11a16,16,0,0,0,15.75-1.14,8.44,8.44,0,0,0,.74-.56L168.89,152l47,21.05h0s.08,0,.11,0A40.21,40.21,0,0,1,176,208Z"></path>
+</svg>
+</button>
+</header>
+<div class="flex flex-col gap-6 p-4">
+<div class="flex items-end gap-3 max-w-[80%]">
+<img alt="Rina's avatar" class="w-10 h-10 rounded-full shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD59vzfg31FfHof2uVctMPbl7d3J5fFWCRWxY5crhsfi7_Pw2WPyrKms3iO1A8_5GjdJ6rRjGBTcYMxgFtR4b6iLa4sddQHk88oKGp-G9eGwkmpQQ3PIPrxivpRsdJULlTLO3fSUSio46XlVbUZJ_73HhRvzYZdGzWiKzvXKMKoEHxcpWhrQelcw6TFRynlg-GmoqHWWj5FyZNeGFNzCXQ8xPafSlzD_6YQncDN_CxKhGx_ImSj27pNhDUgk6NWVShybKFVUpsc_ko"/>
+<div class="flex flex-col gap-1 items-start">
+<p class="text-sm text-gray-500 dark:text-gray-400">Rina</p>
+<p class="text-base leading-snug rounded-lg px-4 py-3 bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200">Hai, apa kabar?</p>
+</div>
+</div>
+<div class="flex items-end gap-3 justify-end self-end max-w-[80%]">
+<div class="flex flex-col gap-1 items-end">
+<p class="text-sm text-gray-500 dark:text-gray-400">Kamu</p>
+<p class="text-base leading-snug rounded-lg px-4 py-3 bg-primary text-white">Halo! Saya baik-baik saja, terima kasih. Bagaimana denganmu?</p>
+</div>
+<img alt="Your avatar" class="w-10 h-10 rounded-full shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCByB1qWiCxBDjFm4Fy70u2VX61kzbApYiTN-ZtxS2b7IXa4ZZEiikNiRM2_yKK-qUX0-BvAtcy1ccoIF0FcTTCq_UtyQpPk2EtDUXMSs22GJ8MamVCzeEsc_Qkar21dxh2f0fu6UoPPdxjBKa30HnrMJBf8YA6a_bWCHUCfl72XILLafxBrdluWFRYHgq4FWMmrJzDYFxWwBcBXJA067AGul-X6bx6DGJ7ShuU_3PJS0I5yYGkbxlkz877PzjBQ6c41uO2vi5iKZY"/>
+</div>
+<div class="flex items-end gap-3 max-w-[80%]">
+<img alt="Rina's avatar" class="w-10 h-10 rounded-full shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQjByZ9bKx-LOZdkfa7JDX05qQyrRzEdMhSBup2zbziamneCp_E7Ng1E1luKVfxmB4qQwFJpYzBZP9cGbI2GXwkkUHK1xVm7pZ4tr2fA5nXvTM6f1bnvQ7rZGAFNkXEeqdqtYoqunQxVt7ud0BZARF2a8RmiO21cV796XwfI2c9RwnRCMzERXm3tjEgYvWlaBtHOwQaOY45_0w0tGvvqejjrT0QqXJh5K9lNsRmsboTDU4G0E-eXm2V-5glGIELVFuUGiaWrg12uU"/>
+<div class="flex flex-col gap-1 items-start">
+<p class="text-sm text-gray-500 dark:text-gray-400">Rina</p>
+<p class="text-base leading-snug rounded-lg px-4 py-3 bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200">Saya juga baik. Ada apa?</p>
+</div>
+</div>
+<div class="flex items-end gap-3 justify-end self-end max-w-[80%]">
+<div class="flex flex-col gap-1 items-end">
+<p class="text-sm text-gray-500 dark:text-gray-400">Kamu</p>
+<p class="text-base leading-snug rounded-lg px-4 py-3 bg-primary text-white">Tidak ada yang khusus. Hanya ingin menyapa.</p>
+</div>
+<img alt="Your avatar" class="w-10 h-10 rounded-full shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdSrR07ikZZ3Xk8L_nGOYA7L-X1Rimw8NYTz8S8r2Rn6UP4C8t4sCiNCOh89l5FckrIm0-yKxsov_GMU-1VfBGXF0o7szDpbHcw9wxXTt3o3U8zoQiWdVPudbJhzx8y90LUhW9FwPaSX9qdo7FXqCqP_-LW_I5rezb8pnLGdvY0XXmZn1HYXGGK0jJpNKuyVGTI0b8VUAa3K_BWwCNFtAJY-SFTJFi9pCPqhCSqymTBPSnsDDnmLAFlauFT7FA99iRcngVF8ho2aA"/>
+</div>
+</div>
+</div>
+<div class="sticky bottom-0 bg-background-light dark:bg-background-dark py-3">
+<div class="flex items-center px-4 gap-3 @container">
+<div class="flex-1 flex items-center bg-gray-200 dark:bg-gray-800 rounded-lg">
+<input class="flex-1 w-full p-3 bg-transparent text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400 border-none focus:ring-0" placeholder="Ketik pesan" value=""/>
+<div class="flex items-center gap-2 pr-3">
+<button class="p-1.5 text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary">
+<svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg">
+<path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V158.75l-26.07-26.06a16,16,0,0,0-22.63,0l-20,20-44-44a16,16,0,0,0-22.62,0L40,149.37V56ZM40,172l52-52,80,80H40Zm176,28H194.63l-36-36,20-20L216,181.38V200ZM144,100a12,12,0,1,1,12,12A12,12,0,0,1,144,100Z"></path>
+</svg>
+</button>
+<button class="p-1.5 text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary">
+<svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg">
+<path d="M168,32H88A56.06,56.06,0,0,0,32,88v80a56.06,56.06,0,0,0,56,56h48a8.07,8.07,0,0,0,2.53-.41c26.23-8.75,76.31-58.83,85.06-85.06A8.07,8.07,0,0,0,224,136V88A56.06,56.06,0,0,0,168,32ZM48,168V88A40,40,0,0,1,88,48h80a40,40,0,0,1,40,40v40H184a56.06,56.06,0,0,0-56,56v24H88A40,40,0,0,1,48,168Zm96,35.14V184a40,40,0,0,1,40-40h19.14C191,163.5,163.5,191,144,203.14Z"></path>
+</svg>
+</button>
+</div>
+</div>
+<button class="shrink-0 flex items-center justify-center h-12 w-12 rounded-lg bg-primary text-white">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M232,128a8,8,0,0,1-8.53,7.93l-45.71-8.31-28.9,41.28a8,8,0,0,1-13.72,0L106.29,136,75.48,177.3a8,8,0,0,1-13.72,0L32.54,135.93a8,8,0,0,1,0-15.86l192-32a8,8,0,0,1,7.46,7.93ZM192.65,112,40,144l24-34.28a8,8,0,0,1,13.72,0L106.52,152l28.89-41.28a8,8,0,0,1,13.72,0L178,152Z"></path>
+</svg>
+</button>
+</div>
+</div>
+</div>
+
+</body></html>
