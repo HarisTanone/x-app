@@ -39,9 +39,20 @@ class AuthController extends GetxController {
         Get.offAllNamed('/home');
       }
     } on AuthException catch (e) {
-      CustomSnackbar.error(e.message);
+      String errorMessage = e.message;
+      
+      if (e.message.contains('Invalid login credentials')) {
+        errorMessage = 'Invalid email or password';
+      } else if (e.message.contains('Email not confirmed')) {
+        errorMessage = 'Please verify your email first';
+      } else if (e.message.contains('Too many requests')) {
+        errorMessage = 'Too many login attempts. Please try again later';
+      }
+      
+      CustomSnackbar.error(errorMessage);
     } catch (e) {
-      CustomSnackbar.error('An unexpected error occurred');
+      print('Login error: $e');
+      CustomSnackbar.error('Login failed. Please try again');
     } finally {
       isLoading.value = false;
     }
@@ -80,10 +91,34 @@ class AuthController extends GetxController {
         Get.back();
       }
     } on AuthException catch (e) {
-      CustomSnackbar.error(e.message);
+      String errorMessage = e.message;
+      
+      if (e.message.contains('User already registered')) {
+        errorMessage = 'Email already registered';
+      } else if (e.message.contains('Password should be at least')) {
+        errorMessage = 'Password must be at least 6 characters';
+      } else if (e.message.contains('Invalid email')) {
+        errorMessage = 'Please enter a valid email';
+      }
+      
+      CustomSnackbar.error(errorMessage);
     } catch (e) {
       print('Registration error: $e');
-      CustomSnackbar.error('Registration failed: ${e.toString()}');
+      String errorMessage = 'Registration failed';
+      
+      if (e.toString().contains('duplicate key value violates unique constraint')) {
+        if (e.toString().contains('email')) {
+          errorMessage = 'Email already exists';
+        } else if (e.toString().contains('phone')) {
+          errorMessage = 'Phone number already exists';
+        }
+      } else if (e.toString().contains('invalid input syntax')) {
+        errorMessage = 'Invalid data format';
+      } else if (e.toString().contains('violates check constraint')) {
+        errorMessage = 'Invalid data provided';
+      }
+      
+      CustomSnackbar.error(errorMessage);
     } finally {
       isLoading.value = false;
     }
