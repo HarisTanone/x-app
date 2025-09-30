@@ -19,7 +19,7 @@ class RegisterScreen extends StatefulWidget {
 class _RegisterScreenState extends State<RegisterScreen> {
   final _formKey = GlobalKey<FormState>();
   final fullNameController = TextEditingController();
-  final phoneController = TextEditingController();
+
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   final dobController = TextEditingController();
@@ -29,7 +29,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   @override
   void dispose() {
     fullNameController.dispose();
-    phoneController.dispose();
+
     emailController.dispose();
     passwordController.dispose();
     dobController.dispose();
@@ -76,18 +76,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     controller: fullNameController,
                     validator: Validators.name,
                   ),
-                  const SizedBox(height: 16),
-                  CustomTextField(
-                    hintText: 'Phone Number',
-                    keyboardType: TextInputType.phone,
-                    controller: phoneController,
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Phone number is required';
-                      }
-                      return null;
-                    },
-                  ),
+
                   const SizedBox(height: 16),
                   CustomTextField(
                     hintText: 'Email',
@@ -179,7 +168,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           emailController.text, 
                           passwordController.text, 
                           fullNameController.text,
-                          phoneController.text,
                           dobController.text,
                           selectedGender!,
                         );

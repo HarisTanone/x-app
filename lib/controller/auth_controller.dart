@@ -58,7 +58,7 @@ class AuthController extends GetxController {
     }
   }
 
-  Future<void> register(String email, String password, String fullName, String phone, String dateOfBirth, String gender) async {
+  Future<void> register(String email, String password, String fullName, String dateOfBirth, String gender) async {
     try {
       isLoading.value = true;
       
@@ -69,20 +69,15 @@ class AuthController extends GetxController {
 
       if (response.user != null) {
         // Create profile after successful auth signup
+        int genderValue = gender.toLowerCase() == 'male' ? 1 : 
+                         gender.toLowerCase() == 'female' ? 2 : 3;
+        
         await SupabaseService.client.from('profiles').insert({
           'id': response.user!.id,
           'full_name': fullName,
-          'phone': phone,
-          'email': email,
           'date_of_birth': dateOfBirth,
-          'gender': gender.toLowerCase(),
-          'bio': null,
-          'location': null,
-          'interests': [],
-          'photos': [],
+          'gender': genderValue,
           'is_verified': false,
-          'is_premium': false,
-          'last_active': DateTime.now().toIso8601String(),
           'created_at': DateTime.now().toIso8601String(),
           'updated_at': DateTime.now().toIso8601String(),
         });
@@ -109,9 +104,7 @@ class AuthController extends GetxController {
       if (e.toString().contains('duplicate key value violates unique constraint')) {
         if (e.toString().contains('email')) {
           errorMessage = 'Email already exists';
-        } else if (e.toString().contains('phone')) {
-          errorMessage = 'Phone number already exists';
-        }
+  
       } else if (e.toString().contains('invalid input syntax')) {
         errorMessage = 'Invalid data format';
       } else if (e.toString().contains('violates check constraint')) {
