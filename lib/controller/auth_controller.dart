@@ -47,24 +47,43 @@ class AuthController extends GetxController {
     }
   }
 
-  Future<void> register(String email, String password, String fullName) async {
+  Future<void> register(String email, String password, String fullName, String phone, String dateOfBirth, String gender) async {
     try {
       isLoading.value = true;
       
       final response = await SupabaseService.auth.signUp(
         email: email,
         password: password,
-        data: {'full_name': fullName},
       );
 
       if (response.user != null) {
-        CustomSnackbar.success('Registration successful. Please check your email for verification.');
+        // Create profile after successful auth signup
+        await SupabaseService.client.from('profiles').insert({
+          'id': response.user!.id,
+          'full_name': fullName,
+          'phone': phone,
+          'email': email,
+          'date_of_birth': dateOfBirth,
+          'gender': gender.toLowerCase(),
+          'bio': null,
+          'location': null,
+          'interests': [],
+          'photos': [],
+          'is_verified': false,
+          'is_premium': false,
+          'last_active': DateTime.now().toIso8601String(),
+          'created_at': DateTime.now().toIso8601String(),
+          'updated_at': DateTime.now().toIso8601String(),
+        });
+        
+        CustomSnackbar.success('Registration successful!');
         Get.back();
       }
     } on AuthException catch (e) {
       CustomSnackbar.error(e.message);
     } catch (e) {
-      CustomSnackbar.error('An unexpected error occurred');
+      print('Registration error: $e');
+      CustomSnackbar.error('Registration failed: ${e.toString()}');
     } finally {
       isLoading.value = false;
     }

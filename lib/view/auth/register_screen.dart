@@ -19,15 +19,20 @@ class RegisterScreen extends StatefulWidget {
 class _RegisterScreenState extends State<RegisterScreen> {
   final _formKey = GlobalKey<FormState>();
   final fullNameController = TextEditingController();
+  final phoneController = TextEditingController();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+  final dobController = TextEditingController();
+  String? selectedGender;
   bool _obscurePassword = true;
 
   @override
   void dispose() {
     fullNameController.dispose();
+    phoneController.dispose();
     emailController.dispose();
     passwordController.dispose();
+    dobController.dispose();
     super.dispose();
   }
 
@@ -64,60 +69,131 @@ class _RegisterScreenState extends State<RegisterScreen> {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-              const SizedBox(height: 20),
-              CustomTextField(
-                hintText: 'Full Name',
-                keyboardType: TextInputType.name,
-                controller: fullNameController,
-                validator: Validators.name,
-              ),
-              const SizedBox(height: 16),
-              CustomTextField(
-                hintText: 'Email',
-                keyboardType: TextInputType.emailAddress,
-                controller: emailController,
-                validator: Validators.email,
-              ),
-              const SizedBox(height: 16),
-              CustomTextField(
-                hintText: 'Password',
-                obscureText: _obscurePassword,
-                controller: passwordController,
-                validator: Validators.password,
-                suffixIcon: IconButton(
-                  onPressed: () {
-                    setState(() {
-                      _obscurePassword = !_obscurePassword;
-                    });
-                  },
-                  icon: Icon(
-                    _obscurePassword ? Icons.visibility : Icons.visibility_off,
-                    color: isDark ? AppColors.zinc500 : AppColors.zinc400,
+                  const SizedBox(height: 20),
+                  CustomTextField(
+                    hintText: 'Full Name',
+                    keyboardType: TextInputType.name,
+                    controller: fullNameController,
+                    validator: Validators.name,
                   ),
-                ),
-              ),
-              const SizedBox(height: 24),
-              Obx(() => LoadingButton(
-                text: 'Register',
-                isLoading: authController.isLoading.value,
-                onPressed: () {
-                  if (_formKey.currentState!.validate()) {
-                    authController.register(
-                      emailController.text, 
-                      passwordController.text, 
-                      fullNameController.text
-                    );
-                  }
-                },
-              )),
-              const SizedBox(height: 16),
-              Text(
-                'By registering, you agree to our ${AppConstants.termsConditions} and ${AppConstants.privacyPolicy}',
-                style: AppTextStyles.xs.copyWith(
-                  color: isDark ? AppColors.gray400 : AppColors.gray500,
-                ),
-                textAlign: TextAlign.center,
-              ),
+                  const SizedBox(height: 16),
+                  CustomTextField(
+                    hintText: 'Phone Number',
+                    keyboardType: TextInputType.phone,
+                    controller: phoneController,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Phone number is required';
+                      }
+                      return null;
+                    },
+                  ),
+                  const SizedBox(height: 16),
+                  CustomTextField(
+                    hintText: 'Email',
+                    keyboardType: TextInputType.emailAddress,
+                    controller: emailController,
+                    validator: Validators.email,
+                  ),
+                  const SizedBox(height: 16),
+                  CustomTextField(
+                    hintText: 'Date of Birth (YYYY-MM-DD)',
+                    controller: dobController,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Date of birth is required';
+                      }
+                      final dob = DateTime.tryParse(value);
+                      if (dob == null) {
+                        return 'Invalid date format';
+                      }
+                      final age = DateTime.now().difference(dob).inDays / 365;
+                      if (age < 18) {
+                        return 'Must be at least 18 years old';
+                      }
+                      return null;
+                    },
+                  ),
+                  const SizedBox(height: 16),
+                  DropdownButtonFormField<String>(
+                    value: selectedGender,
+                    decoration: InputDecoration(
+                      hintText: 'Gender',
+                      hintStyle: TextStyle(
+                        color: isDark ? AppColors.zinc500 : AppColors.zinc400,
+                      ),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                        borderSide: BorderSide(
+                          color: isDark ? AppColors.stone800 : AppColors.stone600,
+                        ),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                        borderSide: const BorderSide(color: AppColors.primary),
+                      ),
+                    ),
+                    items: ['Male', 'Female', 'Non-binary'].map((String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(value),
+                      );
+                    }).toList(),
+                    onChanged: (String? newValue) {
+                      setState(() {
+                        selectedGender = newValue;
+                      });
+                    },
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Gender is required';
+                      }
+                      return null;
+                    },
+                  ),
+                  const SizedBox(height: 16),
+                  CustomTextField(
+                    hintText: 'Password',
+                    obscureText: _obscurePassword,
+                    controller: passwordController,
+                    validator: Validators.password,
+                    suffixIcon: IconButton(
+                      onPressed: () {
+                        setState(() {
+                          _obscurePassword = !_obscurePassword;
+                        });
+                      },
+                      icon: Icon(
+                        _obscurePassword ? Icons.visibility : Icons.visibility_off,
+                        color: isDark ? AppColors.zinc500 : AppColors.zinc400,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 24),
+                  Obx(() => LoadingButton(
+                    text: 'Register',
+                    isLoading: authController.isLoading.value,
+                    onPressed: () {
+                      if (_formKey.currentState!.validate()) {
+                        authController.register(
+                          emailController.text, 
+                          passwordController.text, 
+                          fullNameController.text,
+                          phoneController.text,
+                          dobController.text,
+                          selectedGender!,
+                        );
+                      }
+                    },
+                  )),
+                  const SizedBox(height: 16),
+                  Text(
+                    'By registering, you agree to our ${AppConstants.termsConditions} and ${AppConstants.privacyPolicy}',
+                    style: AppTextStyles.xs.copyWith(
+                      color: isDark ? AppColors.gray400 : AppColors.gray500,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
                 ],
               ),
             ),
