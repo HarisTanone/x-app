@@ -42,9 +42,10 @@ class _LoginScreenState extends State<LoginScreen> {
           padding: const EdgeInsets.all(24.0),
           child: Form(
             key: _formKey,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
               const SizedBox(height: 60),
               Text(
                 'Welcome back',
@@ -115,7 +116,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 onPressed: () {},
                 isSecondary: true,
               ),
-              const Spacer(),
+              const SizedBox(height: 40),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -126,7 +127,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   TextButton(
-                    onPressed: () => Get.to(() => const RegisterScreen()),
+                    onPressed: () => Get.toNamed('/register'),
                     child: Text(
                       'Sign up',
                       style: AppTextStyles.sm.copyWith(
@@ -137,7 +138,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ],
               ),
-              ],
+                ],
+              ),
             ),
           ),
         ),

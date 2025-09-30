@@ -61,8 +61,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
           padding: const EdgeInsets.all(24.0),
           child: Form(
             key: _formKey,
-            child: Column(
-              children: [
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
               const SizedBox(height: 20),
               CustomTextField(
                 hintText: 'Full Name',
@@ -117,7 +118,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ),
                 textAlign: TextAlign.center,
               ),
-              ],
+                ],
+              ),
             ),
           ),
         ),
