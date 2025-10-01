@@ -110,12 +110,6 @@ class _LoginScreenState extends State<LoginScreen> {
                   }
                 },
               )),
-              const SizedBox(height: 16),
-              CustomButton(
-                text: 'Continue with social',
-                onPressed: () {},
-                isSecondary: true,
-              ),
               const SizedBox(height: 40),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,

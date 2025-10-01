@@ -82,8 +82,10 @@ class AuthController extends GetxController {
           'updated_at': DateTime.now().toIso8601String(),
         });
         
+        // Auto login after successful registration
+        isLoggedIn.value = true;
         CustomSnackbar.success('Registration successful!');
-        Get.back();
+        Get.offAllNamed('/home');
       }
     } on AuthException catch (e) {
       String errorMessage = e.message;
